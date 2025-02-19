@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlazingBlogNet8.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    [Migration("20250219173022_initial")]
+    [Migration("20250219181559_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -135,10 +135,10 @@ namespace BlazingBlogNet8.Migrations
                         new
                         {
                             Id = 1,
-                            Email = "abhayprince@outlook.com",
-                            FirstName = "Abhay",
+                            Email = "kcin@dotnet.com",
+                            FirstName = "Kerem",
                             Hash = "dfhkhsdskdfffgfjgfjgkdfhjgkdf/=",
-                            LastName = "Prince",
+                            LastName = "CN",
                             Salt = "dshfksdhfk"
                         });
                 });

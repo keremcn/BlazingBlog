@@ -132,10 +132,10 @@ namespace BlazingBlogNet8.Migrations
                         new
                         {
                             Id = 1,
-                            Email = "abhayprince@outlook.com",
-                            FirstName = "Abhay",
+                            Email = "kcin@dotnet.com",
+                            FirstName = "Kerem",
                             Hash = "dfhkhsdskdfffgfjgfjgkdfhjgkdf/=",
-                            LastName = "Prince",
+                            LastName = "CN",
                             Salt = "dshfksdhfk"
                         });
                 });

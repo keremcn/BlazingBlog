@@ -79,7 +79,7 @@ namespace BlazingBlogNet8.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Email", "FirstName", "Hash", "LastName", "Salt" },
-                values: new object[] { 1, "abhayprince@outlook.com", "Abhay", "dfhkhsdskdfffgfjgfjgkdfhjgkdf/=", "Prince", "dshfksdhfk" });
+                values: new object[] { 1, "kcin@dotnet.com", "Kerem", "dfhkhsdskdfffgfjgfjgkdfhjgkdf/=", "CN", "dshfksdhfk" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_BlogPosts_CategoryId",
