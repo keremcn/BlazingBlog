@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace BlazingBlog.Migrations
+namespace BlazingBlogNet8.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,10 +15,10 @@ namespace BlazingBlog.Migrations
                 name: "Categories",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false),
-                    Slug = table.Column<string>(type: "varchar(125)", unicode: false, maxLength: 125, nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", unicode: false, maxLength: 100, nullable: false),
+                    Slug = table.Column<string>(type: "TEXT", unicode: false, maxLength: 125, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -29,13 +29,13 @@ namespace BlazingBlog.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "varchar(25)", unicode: false, maxLength: 25, nullable: false),
-                    LastName = table.Column<string>(type: "varchar(25)", unicode: false, maxLength: 25, nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Salt = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    Hash = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    FirstName = table.Column<string>(type: "TEXT", unicode: false, maxLength: 25, nullable: false),
+                    LastName = table.Column<string>(type: "TEXT", unicode: false, maxLength: 25, nullable: true),
+                    Email = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    Salt = table.Column<string>(type: "TEXT", maxLength: 30, nullable: false),
+                    Hash = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -46,18 +46,18 @@ namespace BlazingBlog.Migrations
                 name: "BlogPosts",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(120)", maxLength: 120, nullable: false),
-                    Slug = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    CategoryId = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    Introduction = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
-                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsPublished = table.Column<bool>(type: "bit", nullable: false),
-                    PublishedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Title = table.Column<string>(type: "TEXT", maxLength: 120, nullable: false),
+                    Slug = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false),
+                    CategoryId = table.Column<int>(type: "INTEGER", nullable: false),
+                    UserId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Introduction = table.Column<string>(type: "TEXT", maxLength: 250, nullable: false),
+                    Content = table.Column<string>(type: "TEXT", nullable: false),
+                    CreatedOn = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    IsPublished = table.Column<bool>(type: "INTEGER", nullable: false),
+                    PublishedOn = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModifiedOn = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

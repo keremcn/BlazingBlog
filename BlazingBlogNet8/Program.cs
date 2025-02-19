@@ -17,9 +17,11 @@ builder.Services.AddScoped<BlogAuthenticationStateProvider>();
 builder.Services.AddScoped<AuthenticationStateProvider>(serviceProvider =>
     serviceProvider.GetRequiredService<BlogAuthenticationStateProvider>());
 
-var blogConnectionString = builder.Configuration.GetConnectionString("Blog");
+//var blogConnectionString = builder.Configuration.GetConnectionString("Blog");
+var blogConnectionString = builder.Configuration.GetConnectionString("BlogLite");
 
-builder.Services.AddDbContext<BlogContext>(options => options.UseSqlServer(blogConnectionString), ServiceLifetime.Transient);
+//builder.Services.AddDbContext<BlogContext>(options => options.UseSqlServer(blogConnectionString), ServiceLifetime.Transient);
+builder.Services.AddDbContext<BlogContext>(options => options.UseSqlite(blogConnectionString), ServiceLifetime.Transient);
 
 
 var app = builder.Build();
