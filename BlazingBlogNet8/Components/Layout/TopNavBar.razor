@@ -6,12 +6,8 @@
         <NavLink href="/" class="text-light text-decoration-none fs-4 fw-bold">Blazing Blog</NavLink>
 
         <ul class="nav">
-            <li>
-                <NavLink href="/" class="link-light nav-link">Home</NavLink>
-            </li>
-            <li>
-                <NavLink href="/about" class="link-light nav-link">About</NavLink>
-            </li>
+          
+           
             <AuthorizeView>
                 <Authorized>
                     <li>
@@ -31,9 +27,9 @@
                     <NavLink href="javascript:void()" class="btn btn-light disabled">@context.User?.Identity?.Name</NavLink>                    
                     <button type="button" class="btn btn-primary" @onclick="LogoutAsync">Logout</button>
                 </Authorized>
-                <NotAuthorized>
+           @*      <NotAuthorized>
                     <NavLink href="/login" class="btn btn-primary">Login</NavLink>
-                </NotAuthorized>
+                </NotAuthorized> *@
             </AuthorizeView>
         </div>
     </header>
